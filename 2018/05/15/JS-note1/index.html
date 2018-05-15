@@ -1,0 +1,1003 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js基础知识," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1. 变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 2. 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器">
+<meta name="keywords" content="js基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试知识点笔记-js">
+<meta property="og:url" content="http://yoursite.com/2018/05/15/JS-note1/index.html">
+<meta property="og:site_name" content="Judy">
+<meta property="og:description" content="1. 变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 2. 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器">
+<meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js01.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js02.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js03.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js04.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js05.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js06.jpg">
+<meta property="og:updated_time" content="2018-05-15T09:47:05.572Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试知识点笔记-js">
+<meta name="twitter:description" content="1. 变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 2. 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/15/JS-note1/"/>
+
+
+
+
+
+  <title>面试知识点笔记-js | Judy</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Judy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Never Give Up</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/JS-note1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Judy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Judy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试知识点笔记-js</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T17:41:39+08:00">
+                2018-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+
+              
+              &nbsp; | &nbsp;
+             <span id="/2018/05/15/JS-note1/"class="leancloud_visitors" data-flag-title="面试知识点笔记-js">
+               &nbsp;阅读次数
+               </span>
+             
+
+
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/15/JS-note1/" class="leancloud_visitors" data-flag-title="面试知识点笔记-js">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="1-变量提升"><a href="#1-变量提升" class="headerlink" title="1. 变量提升"></a>1. 变量提升</h5><p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。<br>JavaScript 只有声明的变量会提升，初始化的不会。<br>js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。<br>函数声明优先于变量声明。</p>
+<h5 id="2-闭包的理解"><a href="#2-闭包的理解" class="headerlink" title="2. 闭包的理解"></a>2. 闭包的理解</h5><p>有权访问另一个函数作用域内变量的函数都是闭包<br><a href="https://www.cnblogs.com/JIANGCHEN520/p/7118656.html" target="_blank" rel="external">原地址</a><br>通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但闭包利用一个技巧，让作用域里面的变量，在函数执行完之后依旧保存没有被垃圾回收处理掉。<br>举例来说，当点击一组button按钮的时候，通过for循环来为每一个btn添加点击事件，通过把i传入自执行函数来绑定click事件，由于i一直在被引用中，不会被回收掉，所以就形成了闭包。</p>
+<h5 id="3-原型及原型链"><a href="#3-原型及原型链" class="headerlink" title="3. 原型及原型链"></a>3. 原型及原型链</h5><h5 id="4-iframe缺点"><a href="#4-iframe缺点" class="headerlink" title="4. iframe缺点"></a>4. iframe缺点</h5><p>样式难调，会增加服务器的http请求，无法被一些搜索引擎解读，iframe会阻塞主页面Onload事件。<br>    iframe优点： 能够直接把嵌入的网页展示出来，第三方图标广告</p>
+<h5 id="5-Ajax的原生写法"><a href="#5-Ajax的原生写法" class="headerlink" title="5. Ajax的原生写法"></a>5. Ajax的原生写法</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js01.jpg" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js02.jpg" alt="image"></p>
+<h5 id="6-同源策略"><a href="#6-同源策略" class="headerlink" title="6.同源策略"></a>6.同源策略</h5><p>限制了一些不同源的脚本，从一个域上加载的脚本不允许访问另外一个域的文档属性。</p>
+<h5 id="7-前端处理跨域"><a href="#7-前端处理跨域" class="headerlink" title="7. 前端处理跨域"></a>7. 前端处理跨域</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js03.jpg" alt="image"></p>
+<p>7.1 jsonp跨域通过动态创建script标签，请求一个带参数的路径及一个回调函数，缺点是只能get请求<br>7.2document.domain + iframe跨域,缺点是仅限主域相同，子域不同的跨域应用（父:(<a href="http://www.domain.com/a.html),子：(http://child.domain.com/b.html)）" target="_blank" rel="external">http://www.domain.com/a.html),子：(http://child.domain.com/b.html)）</a></p>
+<h5 id="7-5postMessage跨域html5中的属性，可跨window属性之一"><a href="#7-5postMessage跨域html5中的属性，可跨window属性之一" class="headerlink" title="7.5postMessage跨域html5中的属性，可跨window属性之一"></a>7.5postMessage跨域html5中的属性，可跨window属性之一</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js04.jpg" alt="image"></p>
+<p>7.6跨域资源共享，只服务端设置Access-Control-Allow-Origin即可，前端无须设置，若要带cookie请求：前后端都需要设置。主流的跨域解决方案<br>7.8node.js中间件代理：通过启一个代理服务器，实现数据的转发</p>
+<h5 id="8-判断两个对象是否相等"><a href="#8-判断两个对象是否相等" class="headerlink" title="8. 判断两个对象是否相等"></a>8. 判断两个对象是否相等</h5><p>instance of(能在实例的原型对象链中找到该构造函数的prototype属性所指向的原型对象，就返回true)<br>instanceof用于判断一个变量是否某个对象的实例.<br>typeof用以获取一个变量或者表达式的类型</p>
+<h5 id="9-性能优化处理"><a href="#9-性能优化处理" class="headerlink" title="9.性能优化处理"></a>9.性能优化处理</h5><p>1.减少http请求，合并压缩css,js文件 2.减少dom操作 3.json格式的数据交换，以为json是一种轻量级的数据格式。4.标签语义化，利于seo优化 5.css文件放在head头部和js放在body下部</p>
+<h5 id="10-es6箭头函数this"><a href="#10-es6箭头函数this" class="headerlink" title="10. es6箭头函数this"></a>10. es6箭头函数this</h5><p> this指向是在定义函数时绑定的，不是执行时绑定的。继承的是父执行上下文里面的this</p>
+<h5 id="11-es6的set方法"><a href="#11-es6的set方法" class="headerlink" title="11. es6的set方法"></a>11. es6的set方法</h5><p>set是一个构造函数，[…new Set(array)]数组去重，类似于数组，map类似于键值对</p>
+<h5 id="12-对象及数组的深拷贝"><a href="#12-对象及数组的深拷贝" class="headerlink" title="12. 对象及数组的深拷贝"></a>12. 对象及数组的深拷贝</h5><p>数组的浅拷贝，就是利用“=“来实现的，但是浅拷贝缺点是，被拷贝的数组变化，拷贝的数组也会随之变化。所以深拷贝就成为必要的。</p>
+<p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js05.jpg" alt="image"></p>
+<p>对比下来啊，对象的深拷贝也就不困难了</p>
+<p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js06.jpg" alt="image"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js基础知识/" rel="tag"># js基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/15/CSS-note1/" rel="next" title="面试知识点笔记-css">
+                <i class="fa fa-chevron-left"></i> 面试知识点笔记-css
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Judy" />
+          <p class="site-author-name" itemprop="name">Judy</p>
+           
+              <p class="site-description motion-element" itemprop="description">From Zero</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Judy-zeng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/theJudy" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-变量提升"><span class="nav-number">1.</span> <span class="nav-text">1. 变量提升</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-闭包的理解"><span class="nav-number">2.</span> <span class="nav-text">2. 闭包的理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-原型及原型链"><span class="nav-number">3.</span> <span class="nav-text">3. 原型及原型链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-iframe缺点"><span class="nav-number">4.</span> <span class="nav-text">4. iframe缺点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Ajax的原生写法"><span class="nav-number">5.</span> <span class="nav-text">5. Ajax的原生写法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-同源策略"><span class="nav-number">6.</span> <span class="nav-text">6.同源策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-前端处理跨域"><span class="nav-number">7.</span> <span class="nav-text">7. 前端处理跨域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-5postMessage跨域html5中的属性，可跨window属性之一"><span class="nav-number">8.</span> <span class="nav-text">7.5postMessage跨域html5中的属性，可跨window属性之一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-判断两个对象是否相等"><span class="nav-number">9.</span> <span class="nav-text">8. 判断两个对象是否相等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-性能优化处理"><span class="nav-number">10.</span> <span class="nav-text">9.性能优化处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-es6箭头函数this"><span class="nav-number">11.</span> <span class="nav-text">10. es6箭头函数this</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-es6的set方法"><span class="nav-number">12.</span> <span class="nav-text">11. es6的set方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-对象及数组的深拷贝"><span class="nav-number">13.</span> <span class="nav-text">12. 对象及数组的深拷贝</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Judy</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("wQfsSoHG60Avn1XuF6qIys5v-gzGzoHsz#<app_id>", "XFT2XRvuBN01zYm6Wv5NcpfM#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("wQfsSoHG60Avn1XuF6qIys5v-gzGzoHsz#<app_id>", "XFT2XRvuBN01zYm6Wv5NcpfM#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+</body>
+</html>
