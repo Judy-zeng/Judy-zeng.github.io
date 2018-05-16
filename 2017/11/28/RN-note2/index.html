@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="RN中关于侧导航的tab切换设计思想RN对于pad这块的应用以及组件比较少，项目中想要设计侧导航，但是并没有找到类似侧导航的组件。所以自己做了一个简单的tab切换，但是缺点就是点击的时候切换会比较慢，有待改进。  首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。 设置初始状态flag。切换状态时切换成相应的组件。 分别在组件中设置stack/tab路由则可">
+<meta name="description" content="RN中关于侧导航的tab切换设计思想RN对于pad这块的应用以及组件比较少，项目中想要设计侧导航，但是并没有找到类似侧导航的组件。所以自己做了一个简单的tab切换，但是缺点就是点击的时候切换会比较慢，有待改进。 1. 首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。 2. 设置初始状态flag。切换状态时切换成相应的组件。 3. 分别在组件中设置stack">
 <meta name="keywords" content="pad">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-native pad项目">
 <meta property="og:url" content="http://yoursite.com/2017/11/28/RN-note2/index.html">
 <meta property="og:site_name" content="Judy">
-<meta property="og:description" content="RN中关于侧导航的tab切换设计思想RN对于pad这块的应用以及组件比较少，项目中想要设计侧导航，但是并没有找到类似侧导航的组件。所以自己做了一个简单的tab切换，但是缺点就是点击的时候切换会比较慢，有待改进。  首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。 设置初始状态flag。切换状态时切换成相应的组件。 分别在组件中设置stack/tab路由则可">
-<meta property="og:updated_time" content="2017-11-28T05:33:35.146Z">
+<meta property="og:description" content="RN中关于侧导航的tab切换设计思想RN对于pad这块的应用以及组件比较少，项目中想要设计侧导航，但是并没有找到类似侧导航的组件。所以自己做了一个简单的tab切换，但是缺点就是点击的时候切换会比较慢，有待改进。 1. 首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。 2. 设置初始状态flag。切换状态时切换成相应的组件。 3. 分别在组件中设置stack">
+<meta property="og:updated_time" content="2018-05-16T01:49:55.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-native pad项目">
-<meta name="twitter:description" content="RN中关于侧导航的tab切换设计思想RN对于pad这块的应用以及组件比较少，项目中想要设计侧导航，但是并没有找到类似侧导航的组件。所以自己做了一个简单的tab切换，但是缺点就是点击的时候切换会比较慢，有待改进。  首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。 设置初始状态flag。切换状态时切换成相应的组件。 分别在组件中设置stack/tab路由则可">
+<meta name="twitter:description" content="RN中关于侧导航的tab切换设计思想RN对于pad这块的应用以及组件比较少，项目中想要设计侧导航，但是并没有找到类似侧导航的组件。所以自己做了一个简单的tab切换，但是缺点就是点击的时候切换会比较慢，有待改进。 1. 首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。 2. 设置初始状态flag。切换状态时切换成相应的组件。 3. 分别在组件中设置stack">
 
 
 
@@ -391,24 +391,24 @@
 
       
         <h2 id="RN中关于侧导航的tab切换设计思想"><a href="#RN中关于侧导航的tab切换设计思想" class="headerlink" title="RN中关于侧导航的tab切换设计思想"></a>RN中关于侧导航的tab切换设计思想</h2><p><strong>RN对于pad这块的应用以及组件比较少，项目中想要设计侧导航，但是并没有找到类似侧导航的组件。所以自己做了一个简单的tab切换，但是缺点就是点击的时候切换会比较慢，有待改进。</strong></p>
-<ol>
-<li>首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。</li>
-<li>设置初始状态flag。切换状态时切换成相应的组件。</li>
-<li>分别在组件中设置stack/tab路由则可以实现组件内部路由切换。<h2 id="RN中关于扫码功能"><a href="#RN中关于扫码功能" class="headerlink" title="RN中关于扫码功能"></a>RN中关于扫码功能</h2>扫码的组件在RN的社区中还是能够找到几种的。同时适配android，ios我只找到了两个： react-native-barcode-scanner-universal和ac-qrcode。安装第一种的时候总会报各种各样的花式错误，所以果断舍弃了第一种，拥抱第二种。</li>
-<li>npm   install   ac-qrcode   –save</li>
-<li>此外还需要安装npm install react-native-camera</li>
-<li>需要同react-native-camera link后才能使用：react-native   link</li>
-<li>引用组件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;QRScannerView</div><div class="line">       onScanResultReceived=&#123;this.barcodeReceived.bind(this)&#125;</div><div class="line"></div><div class="line">       renderTopBarView=&#123;() =&gt; this._renderTitleBar()&#125;</div><div class="line"></div><div class="line">       renderBottomMenuView=&#123;() =&gt; this._renderMenu()&#125;</div><div class="line">       cornerColor=&apos;#34b5ee&apos;</div><div class="line">       scanBarColor=&apos;#34b5ee&apos;</div><div class="line">       rectWidth=&#123;300&#125;</div><div class="line">       rectHeight=&#123;300&#125;</div><div class="line">        /&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<pre><code>1. 首先配置json数组，数组中封装了导航需要的标题、icon、选中的icon以及切换的组件。
+2. 设置初始状态flag。切换状态时切换成相应的组件。
+3. 分别在组件中设置stack/tab路由则可以实现组件内部路由切换。
+</code></pre><h2 id="RN中关于扫码功能"><a href="#RN中关于扫码功能" class="headerlink" title="RN中关于扫码功能"></a>RN中关于扫码功能</h2><p>扫码的组件在RN的社区中还是能够找到几种的。同时适配android，ios我只找到了两个： react-native-barcode-scanner-universal和ac-qrcode。安装第一种的时候总会报各种各样的花式错误，所以果断舍弃了第一种，拥抱第二种。</p>
+<pre><code>1. npm   install   ac-qrcode   --save
+2. 此外还需要安装npm install react-native-camera
+3. 需要同react-native-camera link后才能使用：react-native   link
+4. 引用组件：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;QRScannerView</div><div class="line">       onScanResultReceived=&#123;this.barcodeReceived.bind(this)&#125;</div><div class="line"></div><div class="line">       renderTopBarView=&#123;() =&gt; this._renderTitleBar()&#125;</div><div class="line"></div><div class="line">       renderBottomMenuView=&#123;() =&gt; this._renderMenu()&#125;</div><div class="line">       cornerColor=&apos;#34b5ee&apos;</div><div class="line">       scanBarColor=&apos;#34b5ee&apos;</div><div class="line">       rectWidth=&#123;300&#125;</div><div class="line">       rectHeight=&#123;300&#125;</div><div class="line">        /&gt;</div></pre></td></tr></table></figure>
 <p>这个组件的好处是可以自定义扫码的样式以及展现形式</p>
-<h2 id="RN中禁止屏幕横屏-竖屏显示"><a href="#RN中禁止屏幕横屏-竖屏显示" class="headerlink" title="RN中禁止屏幕横屏/竖屏显示"></a>RN中禁止屏幕横屏/竖屏显示</h2><h4 id="android版本"><a href="#android版本" class="headerlink" title="android版本"></a>android版本</h4><p>pad的app应用规定只能横屏显示，只需要修改配置文件即可。landscape-横屏，portrait-竖屏。<br>在AndroidManifest.xml文件中</p>
+<h2 id="RN中禁止屏幕横屏-竖屏显示"><a href="#RN中禁止屏幕横屏-竖屏显示" class="headerlink" title="RN中禁止屏幕横屏/竖屏显示"></a>RN中禁止屏幕横屏/竖屏显示</h2><h3 id="android版本"><a href="#android版本" class="headerlink" title="android版本"></a>android版本</h3><p>pad的app应用规定只能横屏显示，只需要修改配置文件即可。landscape-横屏，portrait-竖屏。<br>在AndroidManifest.xml文件中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;activity  </div><div class="line">           android:name=&quot;.DemoActivityt&quot;  </div><div class="line">           android:theme=&quot;@android:style/Theme.NoTitleBar&quot;  </div><div class="line">           android:screenOrientation=&quot;portrait&quot;  </div><div class="line">          &gt;&lt;/activity&gt;</div></pre></td></tr></table></figure>
 <p>另外，android中每次屏幕方向切换时都会重启Activity，所以应该在Activity销毁前保存当前活动的状态，在Activity再次Create的时候载入配置。要避免在转屏时重启activity，可以通过在androidmanifest.xml文件中重新定义方向(给每个activity加上android:configChanges=”keyboardHidden|orientation”属性)，并根据Activity的重写onConfigurationChanged(Configuration newConfig)方法来控制，这样在转屏时就不会重启activity了，而是会去调用onConfigurationChanged(Configuration newConfig)这个方法。<br><em>原创：<a href="http://www.open-open.com/lib/view/open1328278861750.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1328278861750.html</a></em></p>
-<h4 id="iOS-版本"><a href="#iOS-版本" class="headerlink" title="iOS 版本"></a>iOS 版本</h4><ol>
+<h3 id="iOS-版本"><a href="#iOS-版本" class="headerlink" title="iOS 版本"></a>iOS 版本</h3><ol>
 <li>在Xcode 中的General&gt;Deployment中修改orientation中相应的项。</li>
-<li>在info.plist&gt;support interface orientation 中不相关的项删除<h2 id="RN中设置桌面图标及名称"><a href="#RN中设置桌面图标及名称" class="headerlink" title="RN中设置桌面图标及名称"></a>RN中设置桌面图标及名称</h2>1.名称修改打开android/app/src/main/res/values/strings.xml：</li>
+<li>在info.plist&gt;support interface orientation 中不相关的项删除</li>
 </ol>
+<h2 id="RN中设置桌面图标及名称"><a href="#RN中设置桌面图标及名称" class="headerlink" title="RN中设置桌面图标及名称"></a>RN中设置桌面图标及名称</h2><p>1.名称修改打开android/app/src/main/res/values/strings.xml：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;app_name&quot;&gt;app名称&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
 <p>2.图标修改android\app\src\main\res\mipmap-xxxxxx中直接覆盖图标就可以. <br></p>
 <h2 id="RN中设置启动页避免启动白屏问题"><a href="#RN中设置启动页避免启动白屏问题" class="headerlink" title="RN中设置启动页避免启动白屏问题"></a>RN中设置启动页避免启动白屏问题</h2><p>在网络上找到几个关于启动页白屏的插件，其中react-native-splash-screen深得朕心。不过使用的时候要注意对RN的版本限制，React Native &gt;= 0.47.0 use v3.+, for React Native &lt; 0.47.0 use v2.0.0+。因为是pad端所以启动页图片尺寸设置的是屏幕的分辨率</p>
@@ -647,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中关于侧导航的tab切换设计思想"><span class="nav-number">1.</span> <span class="nav-text">RN中关于侧导航的tab切换设计思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中关于扫码功能"><span class="nav-number">2.</span> <span class="nav-text">RN中关于扫码功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中禁止屏幕横屏-竖屏显示"><span class="nav-number">3.</span> <span class="nav-text">RN中禁止屏幕横屏/竖屏显示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#android版本"><span class="nav-number">3.0.1.</span> <span class="nav-text">android版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iOS-版本"><span class="nav-number">3.0.2.</span> <span class="nav-text">iOS 版本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中设置桌面图标及名称"><span class="nav-number">4.</span> <span class="nav-text">RN中设置桌面图标及名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中设置启动页避免启动白屏问题"><span class="nav-number">5.</span> <span class="nav-text">RN中设置启动页避免启动白屏问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中关于文件管理的展示（类似面包屑功能）"><span class="nav-number">6.</span> <span class="nav-text">RN中关于文件管理的展示（类似面包屑功能）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中native-echarts组件打包时遇到的问题"><span class="nav-number">7.</span> <span class="nav-text">RN中native-echarts组件打包时遇到的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中关于侧导航的tab切换设计思想"><span class="nav-number">1.</span> <span class="nav-text">RN中关于侧导航的tab切换设计思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中关于扫码功能"><span class="nav-number">2.</span> <span class="nav-text">RN中关于扫码功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中禁止屏幕横屏-竖屏显示"><span class="nav-number">3.</span> <span class="nav-text">RN中禁止屏幕横屏/竖屏显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#android版本"><span class="nav-number">3.1.</span> <span class="nav-text">android版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-版本"><span class="nav-number">3.2.</span> <span class="nav-text">iOS 版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中设置桌面图标及名称"><span class="nav-number">4.</span> <span class="nav-text">RN中设置桌面图标及名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中设置启动页避免启动白屏问题"><span class="nav-number">5.</span> <span class="nav-text">RN中设置启动页避免启动白屏问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中关于文件管理的展示（类似面包屑功能）"><span class="nav-number">6.</span> <span class="nav-text">RN中关于文件管理的展示（类似面包屑功能）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RN中native-echarts组件打包时遇到的问题"><span class="nav-number">7.</span> <span class="nav-text">RN中native-echarts组件打包时遇到的问题</span></a></li></ol></div>
             
 
           </div>
@@ -676,6 +676,16 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Judy</span>
 </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?15b6be7c0e9b8a6ebb69f24ff61c079e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
         
 

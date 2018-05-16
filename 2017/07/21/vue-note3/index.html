@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="vue基础学习笔记 指令（当表达式的值改变后相应的dom元素也会改变）： v-if （v-if/v-else/v-else-if） v-show 简单的切换css的display属性，始终在dom元素上 v-for （可以遍历json及数组） v-on &amp;lt;=&amp;gt; @ :绑定事件（click/change） v-modal 双向绑定 v-html 渲染html页面 v-bind &amp;lt;=">
+<meta name="description" content="vue基础学习笔记指令（当表达式的值改变后相应的dom元素也会改变）： - v-if （v-if/v-else/v-else-if） - v-show 简单的切换css的display属性，始终在dom元素上 - v-for （可以遍历json及数组） - v-on &amp;lt;=&amp;gt; @ :绑定事件（click/change） - v-modal 双向绑定 - v-html 渲染html页面 -">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue.js基础学习笔记">
 <meta property="og:url" content="http://yoursite.com/2017/07/21/vue-note3/index.html">
 <meta property="og:site_name" content="Judy">
-<meta property="og:description" content="vue基础学习笔记 指令（当表达式的值改变后相应的dom元素也会改变）： v-if （v-if/v-else/v-else-if） v-show 简单的切换css的display属性，始终在dom元素上 v-for （可以遍历json及数组） v-on &amp;lt;=&amp;gt; @ :绑定事件（click/change） v-modal 双向绑定 v-html 渲染html页面 v-bind &amp;lt;=">
-<meta property="og:updated_time" content="2017-07-21T03:08:04.371Z">
+<meta property="og:description" content="vue基础学习笔记指令（当表达式的值改变后相应的dom元素也会改变）： - v-if （v-if/v-else/v-else-if） - v-show 简单的切换css的display属性，始终在dom元素上 - v-for （可以遍历json及数组） - v-on &amp;lt;=&amp;gt; @ :绑定事件（click/change） - v-modal 双向绑定 - v-html 渲染html页面 -">
+<meta property="og:updated_time" content="2018-05-16T02:02:56.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue.js基础学习笔记">
-<meta name="twitter:description" content="vue基础学习笔记 指令（当表达式的值改变后相应的dom元素也会改变）： v-if （v-if/v-else/v-else-if） v-show 简单的切换css的display属性，始终在dom元素上 v-for （可以遍历json及数组） v-on &amp;lt;=&amp;gt; @ :绑定事件（click/change） v-modal 双向绑定 v-html 渲染html页面 v-bind &amp;lt;=">
+<meta name="twitter:description" content="vue基础学习笔记指令（当表达式的值改变后相应的dom元素也会改变）： - v-if （v-if/v-else/v-else-if） - v-show 简单的切换css的display属性，始终在dom元素上 - v-for （可以遍历json及数组） - v-on &amp;lt;=&amp;gt; @ :绑定事件（click/change） - v-modal 双向绑定 - v-html 渲染html页面 -">
 
 
 
@@ -401,75 +401,51 @@
       
 
       
-        <h1 id="vue基础学习笔记"><a href="#vue基础学习笔记" class="headerlink" title="vue基础学习笔记"></a>vue基础学习笔记</h1><ol>
-<li>指令（当表达式的值改变后相应的dom元素也会改变）：<ul>
-<li>v-if （v-if/v-else/v-else-if）</li>
-<li>v-show 简单的切换css的display属性，始终在dom元素上</li>
-<li>v-for （可以遍历json及数组）</li>
-<li>v-on &lt;=&gt; @ :绑定事件（click/change）</li>
-<li>v-modal 双向绑定</li>
-<li>v-html 渲染html页面</li>
-<li>v-bind &lt;=&gt; : &nbsp; 也可以绑定html标签的属性（id/disabled）</li>
-</ul>
-</li>
-<li>props传值<br>父子组件间的传值，在父组件中定义props,在子组件中v-bind绑定props名字即可：</li>
-</ol>
+        <h1 id="vue基础学习笔记"><a href="#vue基础学习笔记" class="headerlink" title="vue基础学习笔记"></a>vue基础学习笔记</h1><p><strong>指令</strong>（当表达式的值改变后相应的dom元素也会改变）：</p>
+<pre><code>- v-if （v-if/v-else/v-else-if）
+- v-show 简单的切换css的display属性，始终在dom元素上
+- v-for （可以遍历json及数组）
+- v-on &lt;=&gt; @ :绑定事件（click/change）
+- v-modal 双向绑定
+- v-html 渲染html页面
+- v-bind &lt;=&gt; : &amp;nbsp; 也可以绑定html标签的属性（id/disabled）
+</code></pre><p><strong>props传值</strong><br>父子组件间的传值，在父组件中定义props,在子组件中v-bind绑定props名字即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;todo-item&apos;, &#123;</div><div class="line">  // todo-item 组件现在接受一个 &quot;prop&quot;，</div><div class="line">  // 类似于一个自定义属性。</div><div class="line">  // 此 prop 名为 todo。</div><div class="line">  props: [&apos;todo&apos;],</div><div class="line">  template: &apos;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;todo-item</div><div class="line">      v-for=&quot;item in groceryList&quot;</div><div class="line">      v-bind:todo=&quot;item&quot;</div><div class="line">      v-bind:key=&quot;item.id&quot;&gt;</div><div class="line">&lt;/todo-item&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>计算属性<br>计算的属性依赖于绑定的data的更新：</li>
-</ol>
+<p><strong>计算属性</strong><br>计算的属性依赖于绑定的data的更新：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello&apos;</div><div class="line">  &#125;,</div><div class="line">  computed: &#123;</div><div class="line">    // a computed getter</div><div class="line">    reversedMessage: function () &#123;</div><div class="line">      // `this` points to the vm instance</div><div class="line">      return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>这段代码的计算属性reverseMessage依赖于message的变化。这种计算属性等同于调用methods里的reverseMessage()函数，但是==计算属性依赖于缓存==，不必反复执行函数。（如果希望有缓存，用methods代替）</p>
-<ol>
-<li>v-bind:class 可以动态绑定class属性样式。class后可以跟数组及json格式。</li>
-</ol>
+<p>v-bind:class 可以动态绑定class属性样式。class后可以跟数组及json格式。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div v-bind:class=&quot;&#123; active: isActive &#125;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div v-bind:class=&quot;[activeClass, errorClass]&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>事件修饰符（可以直接跟在事件后,可以串联）:<ul>
-<li>.prevent —提交事件不再重载页面</li>
-<li>.stop —阻止单击事件冒泡</li>
-<li>.once —点击事件将只会触发一次</li>
-</ul>
-</li>
-</ol>
-<h1 id="vue学习笔记-vuex-axios"><a href="#vue学习笔记-vuex-axios" class="headerlink" title="vue学习笔记-vuex+axios"></a>vue学习笔记-vuex+axios</h1><p> 首先安装环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save vuex vue-axios axios</div></pre></td></tr></table></figure></p>
-<ol>
-<li>vuex-state：<ul>
-<li>mapState:当一个组件需要获取多个状态时候,使用 mapState 辅助函数帮助我们生成计算属性</li>
-<li>…mapState:对象展开运算符，将此对象展开，以便可以将对象整个全部传给computed</li>
-</ul>
-</li>
-<li>vuex-getter:<br>有时需要在store中的state中派生出来一些其他的状态（多个组件需要用到的属性），比如筛选出列表中已完成的</li>
-</ol>
+<p><strong>事件修饰符</strong>（可以直接跟在事件后,可以串联）:</p>
+<pre><code>-  .prevent ---提交事件不再重载页面
+-  .stop ---阻止单击事件冒泡
+-  .once ---点击事件将只会触发一次
+</code></pre><h1 id="vue学习笔记-vuex-axios"><a href="#vue学习笔记-vuex-axios" class="headerlink" title="vue学习笔记-vuex+axios"></a>vue学习笔记-vuex+axios</h1><p> 首先安装环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save vuex vue-axios axios</div></pre></td></tr></table></figure></p>
+<p><strong>vuex-state：</strong></p>
+<pre><code>-  mapState:当一个组件需要获取多个状态时候,使用 mapState 辅助函数帮助我们生成计算属性
+-  ...mapState:对象展开运算符，将此对象展开，以便可以将对象整个全部传给computed
+</code></pre><p><strong>vuex-getter:</strong><br>有时需要在store中的state中派生出来一些其他的状态（多个组件需要用到的属性），比如筛选出列表中已完成的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">  state: &#123;</div><div class="line">    todos: [</div><div class="line">      &#123; id: 1, text: &apos;...&apos;, done: true &#125;,</div><div class="line">      &#123; id: 2, text: &apos;...&apos;, done: false &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  getters: &#123;</div><div class="line">    doneTodos: state =&gt; &#123;</div><div class="line">      return state.todos.filter(todo =&gt; todo.done)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>Getters 会暴露为 store.getters 对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">store.getters.doneTodos</div></pre></td></tr></table></figure></p>
 <ul>
 <li>mapGetters：将store中的getter映射到局部计算属性</li>
-<li>…mapGetters:展开运算符<ol>
-<li>Mutations：<br>更改store中的状态，它会接受 state 作为第一个参数<br>（必须是同步函数）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">  state: &#123;</div><div class="line">    count: 1</div><div class="line">  &#125;,</div><div class="line">  mutations: &#123;</div><div class="line">    increment (state) &#123;</div><div class="line">      // 变更状态</div><div class="line">      state.count++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
+<li>…mapGetters:展开运算符</li>
 </ul>
+<p><strong>Mutations：</strong><br>更改store中的状态，它会接受 state 作为第一个参数<br>（必须是同步函数）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">  state: &#123;</div><div class="line">    count: 1</div><div class="line">  &#125;,</div><div class="line">  mutations: &#123;</div><div class="line">    increment (state) &#123;</div><div class="line">      // 变更状态</div><div class="line">      state.count++</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>调用方法：store.commit(‘increment’)，store.commit 传入额外的参数，即载荷payload:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">store.commit(&apos;increment&apos;, &#123;</div><div class="line">  amount: 10</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>或者对象风格的提交方式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">store.commit(&#123;</div><div class="line">  type: &apos;increment&apos;,</div><div class="line">  amount: 10</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>mutation.js文件：使用常量替代 Mutation 事件类型（多人协作的大型项目中）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// mutation-types.js</div><div class="line">1.export const SOME_MUTATION = &apos;SOME_MUTATION&apos;</div><div class="line"></div><div class="line">2.import &#123; SOME_MUTATION &#125; from &apos;./mutation-types&apos;</div><div class="line"></div><div class="line">3.mutations: &#123;</div><div class="line">    [SOME_MUTATION] (state) &#123;</div><div class="line">      // mutate state</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>action:提交的是 mutation，而不是直接变更状态;<br>Action 可以包含任意异步操作，功能与mutation类似。</li>
-</ol>
+<p><strong>action:</strong>提交的是 mutation，而不是直接变更状态;<br>Action 可以包含任意异步操作，功能与mutation类似。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">actions: &#123;</div><div class="line">    increment (context) &#123;</div><div class="line">      context.commit(&apos;increment&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <p>等价于</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">actions: &#123;</div><div class="line">  increment (&#123; commit &#125;) &#123;</div><div class="line">    commit(&apos;increment&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>通过dispatch分发：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">store.dispatch(&apos;increment&apos;)</div></pre></td></tr></table></figure>
-<p>…mapActions:辅助函数。</p>
-<ol>
-<li>Modules：允许把store模块化</li>
-</ol>
+<p>…mapActions:辅助函数。<br><strong>Modules</strong>：允许把store模块化</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">const moduleA = &#123;</div><div class="line">  state: &#123; ... &#125;,</div><div class="line">  mutations: &#123; ... &#125;,</div><div class="line">  actions: &#123; ... &#125;,</div><div class="line">  getters: &#123; ... &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">  modules: &#123;</div><div class="line">    a: moduleA,</div><div class="line">    b: moduleB</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">store.state.a // -&gt; moduleA 的状态</div></pre></td></tr></table></figure>
 
       
@@ -703,6 +679,16 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Judy</span>
 </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?15b6be7c0e9b8a6ebb69f24ff61c079e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
         
 

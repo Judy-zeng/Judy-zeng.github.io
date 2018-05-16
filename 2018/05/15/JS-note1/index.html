@@ -111,23 +111,23 @@
 
 
 
-<meta name="description" content="1. 变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 2. 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器">
+<meta name="description" content="变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包参考原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但">
 <meta name="keywords" content="js基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试知识点笔记-js">
 <meta property="og:url" content="http://yoursite.com/2018/05/15/JS-note1/index.html">
 <meta property="og:site_name" content="Judy">
-<meta property="og:description" content="1. 变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 2. 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器">
+<meta property="og:description" content="变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包参考原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但">
 <meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js01.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js02.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js03.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js04.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js05.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js06.jpg">
-<meta property="og:updated_time" content="2018-05-15T09:47:05.572Z">
+<meta property="og:updated_time" content="2018-05-16T01:37:51.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试知识点笔记-js">
-<meta name="twitter:description" content="1. 变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 2. 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器">
+<meta name="twitter:description" content="变量提升JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。JavaScript 只有声明的变量会提升，初始化的不会。js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。函数声明优先于变量声明。 闭包的理解有权访问另一个函数作用域内变量的函数都是闭包参考原地址通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js01.jpg">
 
 
@@ -397,21 +397,22 @@
       
 
       
-        <h5 id="1-变量提升"><a href="#1-变量提升" class="headerlink" title="1. 变量提升"></a>1. 变量提升</h5><p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。<br>JavaScript 只有声明的变量会提升，初始化的不会。<br>js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。<br>函数声明优先于变量声明。</p>
-<h5 id="2-闭包的理解"><a href="#2-闭包的理解" class="headerlink" title="2. 闭包的理解"></a>2. 闭包的理解</h5><p>有权访问另一个函数作用域内变量的函数都是闭包<br><a href="https://www.cnblogs.com/JIANGCHEN520/p/7118656.html" target="_blank" rel="external">原地址</a><br>通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但闭包利用一个技巧，让作用域里面的变量，在函数执行完之后依旧保存没有被垃圾回收处理掉。<br>举例来说，当点击一组button按钮的时候，通过for循环来为每一个btn添加点击事件，通过把i传入自执行函数来绑定click事件，由于i一直在被引用中，不会被回收掉，所以就形成了闭包。</p>
-<h5 id="3-原型及原型链"><a href="#3-原型及原型链" class="headerlink" title="3. 原型及原型链"></a>3. 原型及原型链</h5><h5 id="4-iframe缺点"><a href="#4-iframe缺点" class="headerlink" title="4. iframe缺点"></a>4. iframe缺点</h5><p>样式难调，会增加服务器的http请求，无法被一些搜索引擎解读，iframe会阻塞主页面Onload事件。<br>    iframe优点： 能够直接把嵌入的网页展示出来，第三方图标广告</p>
-<h5 id="5-Ajax的原生写法"><a href="#5-Ajax的原生写法" class="headerlink" title="5. Ajax的原生写法"></a>5. Ajax的原生写法</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js01.jpg" alt="image"></p>
+        <h5 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h5><p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。<br>JavaScript 只有声明的变量会提升，初始化的不会。<br>js中创建函数有两种方式：函数声明式和函数字面量式,只有函数声明才存在函数提升。<br>函数声明优先于变量声明。</p>
+<h5 id="闭包的理解"><a href="#闭包的理解" class="headerlink" title="闭包的理解"></a>闭包的理解</h5><p>有权访问另一个函数作用域内变量的函数都是闭包<br><a href="https://www.cnblogs.com/JIANGCHEN520/p/7118656.html" target="_blank" rel="external">参考原地址</a><br>通俗来说，一般情况一个函数（函数作用域）执行完毕，里面声明的变量会全部释放，被垃圾回收器回收。但闭包利用一个技巧，让作用域里面的变量，在函数执行完之后依旧保存没有被垃圾回收处理掉。<br>举例来说，当点击一组button按钮的时候，通过for循环来为每一个btn添加点击事件，通过把i传入自执行函数来绑定click事件，由于i一直在被引用中，不会被回收掉，所以就形成了闭包。</p>
+<h5 id="原型及原型链"><a href="#原型及原型链" class="headerlink" title="原型及原型链"></a>原型及原型链</h5><h5 id="iframe缺点"><a href="#iframe缺点" class="headerlink" title="iframe缺点"></a>iframe缺点</h5><p>样式难调，会增加服务器的http请求，无法被一些搜索引擎解读，iframe会阻塞主页面Onload事件。<br>    iframe优点： 能够直接把嵌入的网页展示出来，第三方图标广告</p>
+<h5 id="Ajax的原生写法"><a href="#Ajax的原生写法" class="headerlink" title="Ajax的原生写法"></a>Ajax的原生写法</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js01.jpg" alt="image"></p>
 <p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js02.jpg" alt="image"></p>
-<h5 id="6-同源策略"><a href="#6-同源策略" class="headerlink" title="6.同源策略"></a>6.同源策略</h5><p>限制了一些不同源的脚本，从一个域上加载的脚本不允许访问另外一个域的文档属性。</p>
-<h5 id="7-前端处理跨域"><a href="#7-前端处理跨域" class="headerlink" title="7. 前端处理跨域"></a>7. 前端处理跨域</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js03.jpg" alt="image"></p>
-<p>7.1 jsonp跨域通过动态创建script标签，请求一个带参数的路径及一个回调函数，缺点是只能get请求<br>7.2document.domain + iframe跨域,缺点是仅限主域相同，子域不同的跨域应用（父:(<a href="http://www.domain.com/a.html),子：(http://child.domain.com/b.html)）" target="_blank" rel="external">http://www.domain.com/a.html),子：(http://child.domain.com/b.html)）</a></p>
-<h5 id="7-5postMessage跨域html5中的属性，可跨window属性之一"><a href="#7-5postMessage跨域html5中的属性，可跨window属性之一" class="headerlink" title="7.5postMessage跨域html5中的属性，可跨window属性之一"></a>7.5postMessage跨域html5中的属性，可跨window属性之一</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js04.jpg" alt="image"></p>
-<p>7.6跨域资源共享，只服务端设置Access-Control-Allow-Origin即可，前端无须设置，若要带cookie请求：前后端都需要设置。主流的跨域解决方案<br>7.8node.js中间件代理：通过启一个代理服务器，实现数据的转发</p>
-<h5 id="8-判断两个对象是否相等"><a href="#8-判断两个对象是否相等" class="headerlink" title="8. 判断两个对象是否相等"></a>8. 判断两个对象是否相等</h5><p>instance of(能在实例的原型对象链中找到该构造函数的prototype属性所指向的原型对象，就返回true)<br>instanceof用于判断一个变量是否某个对象的实例.<br>typeof用以获取一个变量或者表达式的类型</p>
-<h5 id="9-性能优化处理"><a href="#9-性能优化处理" class="headerlink" title="9.性能优化处理"></a>9.性能优化处理</h5><p>1.减少http请求，合并压缩css,js文件 2.减少dom操作 3.json格式的数据交换，以为json是一种轻量级的数据格式。4.标签语义化，利于seo优化 5.css文件放在head头部和js放在body下部</p>
-<h5 id="10-es6箭头函数this"><a href="#10-es6箭头函数this" class="headerlink" title="10. es6箭头函数this"></a>10. es6箭头函数this</h5><p> this指向是在定义函数时绑定的，不是执行时绑定的。继承的是父执行上下文里面的this</p>
-<h5 id="11-es6的set方法"><a href="#11-es6的set方法" class="headerlink" title="11. es6的set方法"></a>11. es6的set方法</h5><p>set是一个构造函数，[…new Set(array)]数组去重，类似于数组，map类似于键值对</p>
-<h5 id="12-对象及数组的深拷贝"><a href="#12-对象及数组的深拷贝" class="headerlink" title="12. 对象及数组的深拷贝"></a>12. 对象及数组的深拷贝</h5><p>数组的浅拷贝，就是利用“=“来实现的，但是浅拷贝缺点是，被拷贝的数组变化，拷贝的数组也会随之变化。所以深拷贝就成为必要的。</p>
+<h5 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h5><p>限制了一些不同源的脚本，从一个域上加载的脚本不允许访问另外一个域的文档属性。</p>
+<h5 id="前端处理跨域"><a href="#前端处理跨域" class="headerlink" title="前端处理跨域"></a>前端处理跨域</h5><p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js03.jpg" alt="image"></p>
+<ol>
+<li>jsonp跨域通过动态创建script标签，请求一个带参数的路径及一个回调函数，缺点是只能get请求</li>
+<li>document.domain + iframe跨域,缺点是仅限主域相同，子域不同的跨域应用(父:(<a href="http://www.domain.com/a.html),子：(http://child.domain.com/b.html" target="_blank" rel="external">http://www.domain.com/a.html),子：(http://child.domain.com/b.html</a>))</li>
+<li><p>postMessage跨域html5中的属性，可跨window属性之一<br><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js04.jpg" alt="image"></p>
+</li>
+<li><p>跨域资源共享，只服务端设置Access-Control-Allow-Origin即可，前端无须设置，若要带cookie请求：前后端都需要设置。主流的跨域解决方案</p>
+</li>
+<li>node.js中间件代理：通过启一个代理服务器，实现数据的转发<h5 id="判断两个对象是否相等"><a href="#判断两个对象是否相等" class="headerlink" title="判断两个对象是否相等"></a>判断两个对象是否相等</h5>instance of(能在实例的原型对象链中找到该构造函数的prototype属性所指向的原型对象，就返回true)<br>instanceof用于判断一个变量是否某个对象的实例.<br>typeof用以获取一个变量或者表达式的类型<h5 id="性能优化处理"><a href="#性能优化处理" class="headerlink" title="性能优化处理"></a>性能优化处理</h5>1.减少http请求，合并压缩css,js文件 2.减少dom操作 3.json格式的数据交换，以为json是一种轻量级的数据格式。4.标签语义化，利于seo优化 5.css文件放在head头部和js放在body下部<h5 id="es6箭头函数this"><a href="#es6箭头函数this" class="headerlink" title="es6箭头函数this"></a>es6箭头函数this</h5>this指向是在定义函数时绑定的，不是执行时绑定的。继承的是父执行上下文里面的this<h5 id="es6的set方法"><a href="#es6的set方法" class="headerlink" title="es6的set方法"></a>es6的set方法</h5>set是一个构造函数，[…new Set(array)]数组去重，类似于数组，map类似于键值对<h5 id="对象及数组的深拷贝"><a href="#对象及数组的深拷贝" class="headerlink" title="对象及数组的深拷贝"></a>对象及数组的深拷贝</h5>数组的浅拷贝，就是利用“=“来实现的，但是浅拷贝缺点是，被拷贝的数组变化，拷贝的数组也会随之变化。所以深拷贝就成为必要的。</li>
+</ol>
 <p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js05.jpg" alt="image"></p>
 <p>对比下来啊，对象的深拷贝也就不困难了</p>
 <p><img src="https://raw.githubusercontent.com/Judy-zeng/Image/master/images/js06.jpg" alt="image"></p>
@@ -614,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-变量提升"><span class="nav-number">1.</span> <span class="nav-text">1. 变量提升</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-闭包的理解"><span class="nav-number">2.</span> <span class="nav-text">2. 闭包的理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-原型及原型链"><span class="nav-number">3.</span> <span class="nav-text">3. 原型及原型链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-iframe缺点"><span class="nav-number">4.</span> <span class="nav-text">4. iframe缺点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Ajax的原生写法"><span class="nav-number">5.</span> <span class="nav-text">5. Ajax的原生写法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-同源策略"><span class="nav-number">6.</span> <span class="nav-text">6.同源策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-前端处理跨域"><span class="nav-number">7.</span> <span class="nav-text">7. 前端处理跨域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-5postMessage跨域html5中的属性，可跨window属性之一"><span class="nav-number">8.</span> <span class="nav-text">7.5postMessage跨域html5中的属性，可跨window属性之一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-判断两个对象是否相等"><span class="nav-number">9.</span> <span class="nav-text">8. 判断两个对象是否相等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-性能优化处理"><span class="nav-number">10.</span> <span class="nav-text">9.性能优化处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-es6箭头函数this"><span class="nav-number">11.</span> <span class="nav-text">10. es6箭头函数this</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-es6的set方法"><span class="nav-number">12.</span> <span class="nav-text">11. es6的set方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-对象及数组的深拷贝"><span class="nav-number">13.</span> <span class="nav-text">12. 对象及数组的深拷贝</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#变量提升"><span class="nav-number">1.</span> <span class="nav-text">变量提升</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包的理解"><span class="nav-number">2.</span> <span class="nav-text">闭包的理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型及原型链"><span class="nav-number">3.</span> <span class="nav-text">原型及原型链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iframe缺点"><span class="nav-number">4.</span> <span class="nav-text">iframe缺点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ajax的原生写法"><span class="nav-number">5.</span> <span class="nav-text">Ajax的原生写法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#同源策略"><span class="nav-number">6.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#前端处理跨域"><span class="nav-number">7.</span> <span class="nav-text">前端处理跨域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断两个对象是否相等"><span class="nav-number">8.</span> <span class="nav-text">判断两个对象是否相等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#性能优化处理"><span class="nav-number">9.</span> <span class="nav-text">性能优化处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#es6箭头函数this"><span class="nav-number">10.</span> <span class="nav-text">es6箭头函数this</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#es6的set方法"><span class="nav-number">11.</span> <span class="nav-text">es6的set方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象及数组的深拷贝"><span class="nav-number">12.</span> <span class="nav-text">对象及数组的深拷贝</span></a></li></ol></div>
             
 
           </div>
@@ -643,6 +644,16 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Judy</span>
 </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?15b6be7c0e9b8a6ebb69f24ff61c079e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
         
 
